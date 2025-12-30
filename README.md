@@ -4,6 +4,8 @@
 
 RailOptima is an advanced, AI-powered web application designed to assist Indian Railways in managing complex traffic scenarios. It provides real-time monitoring, conflict detection, and intelligent optimization strategies to enhance efficiency, punctuality, and safety.
 
+Link - https://indianrailoptima.netlify.app/
+
 ## 🚀 Key Features
 
 - **Live Network Dashboard**: Real-time visualization of the railway network with interactive station nodes, status indicators, and weather alerts.
