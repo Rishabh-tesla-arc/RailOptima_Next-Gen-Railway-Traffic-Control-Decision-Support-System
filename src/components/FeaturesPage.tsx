@@ -109,7 +109,6 @@ const FeaturesPage = () => {
   return (
     <div className="min-h-screen py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -126,7 +125,6 @@ const FeaturesPage = () => {
           </p>
         </motion.div>
 
-        {/* Main Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
             <motion.div
@@ -153,7 +151,6 @@ const FeaturesPage = () => {
           ))}
         </div>
 
-        {/* Additional Features */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -180,7 +177,6 @@ const FeaturesPage = () => {
           </div>
         </motion.div>
 
-        {/* Feature Highlight */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

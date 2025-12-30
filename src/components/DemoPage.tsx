@@ -62,12 +62,11 @@ const DemoPage = () => {
       interval = setInterval(() => {
         setCurrentStep((prev) => (prev + 1) % simulationSteps.length);
         
-        // Update train positions and status
         setTrains(prev => prev.map(train => ({
           ...train,
           position: (train.position + Math.random() * 5) % 100,
           status: currentStep === 1 && train.id === 4 ? 'conflict' : 
-                 currentStep > 3 ? 'running' : train.status,
+                currentStep > 3 ? 'running' : train.status,
           delay: currentStep > 3 ? Math.max(0, train.delay - 2) : train.delay
         })));
       }, 3000);
@@ -106,7 +105,6 @@ const DemoPage = () => {
   return (
     <div className="min-h-screen py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,7 +121,6 @@ const DemoPage = () => {
           </p>
         </motion.div>
 
-        {/* Demo Controls */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -162,7 +159,6 @@ const DemoPage = () => {
           </div>
         </motion.div>
 
-        {/* Railway Network Visualization */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -173,24 +169,19 @@ const DemoPage = () => {
             Live Railway Network Status
           </h2>
           
-          {/* Track Visualization */}
           <div className="relative h-40 bg-gray-100 rounded-lg p-4 mb-6">
-            {/* Main Track */}
             <div className="absolute top-1/2 left-4 right-4 h-2 bg-gray-400 rounded transform -translate-y-1/2">
-              {/* Stations */}
               <div className="absolute left-0 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-2 -translate-y-1"></div>
               <div className="absolute left-1/3 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-2 -translate-y-1"></div>
               <div className="absolute left-2/3 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-2 -translate-y-1"></div>
               <div className="absolute right-0 w-4 h-4 bg-blue-600 rounded-full transform translate-x-2 -translate-y-1"></div>
             </div>
             
-            {/* Station Labels */}
             <div className="absolute bottom-4 left-4 text-xs font-semibold text-gray-600">Station A</div>
             <div className="absolute bottom-4 left-1/3 transform -translate-x-1/2 text-xs font-semibold text-gray-600">Junction B</div>
             <div className="absolute bottom-4 left-2/3 transform -translate-x-1/2 text-xs font-semibold text-gray-600">Station C</div>
             <div className="absolute bottom-4 right-4 text-xs font-semibold text-gray-600">Terminal D</div>
 
-            {/* Trains */}
             {trains.map((train) => (
               <motion.div
                 key={train.id}
@@ -206,7 +197,6 @@ const DemoPage = () => {
               </motion.div>
             ))}
             
-            {/* Conflict Alert */}
             <AnimatePresence>
               {currentStep >= 1 && currentStep <= 3 && (
                 <motion.div
@@ -224,7 +214,6 @@ const DemoPage = () => {
             </AnimatePresence>
           </div>
 
-          {/* Train Status Table */}
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
@@ -259,7 +248,6 @@ const DemoPage = () => {
           </div>
         </motion.div>
 
-        {/* Metrics Dashboard */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -274,7 +262,6 @@ const DemoPage = () => {
           ))}
         </motion.div>
 
-        {/* AI Decision Process */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -318,7 +305,6 @@ const DemoPage = () => {
           </div>
         </motion.div>
 
-        {/* Demo Info */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

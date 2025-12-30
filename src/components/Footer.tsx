@@ -51,10 +51,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white">
-      {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-5 gap-8">
-          {/* Company Info */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-6">
               <Train className="w-8 h-8 text-blue-400" />
@@ -84,7 +82,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Footer Links */}
           {footerLinks.map((section, index) => (
             <div key={index}>
               <h3 className="text-lg font-semibold mb-4 text-white">{section.title}</h3>
@@ -105,7 +102,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Hindi Section */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <motion.div
@@ -134,7 +130,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">

@@ -31,7 +31,6 @@ const Navbar = () => {
             <span className="text-xl font-bold text-gray-800">RailOptima</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
               <Link
@@ -48,7 +47,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-md text-gray-600 hover:text-blue-600"
@@ -57,7 +55,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}

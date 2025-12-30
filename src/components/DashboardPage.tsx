@@ -16,7 +16,6 @@ const DashboardPage = () => {
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
   const [hoveredStation, setHoveredStation] = useState<string | null>(null);
 
-  // Update time every second
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date().toLocaleTimeString());
@@ -81,7 +80,6 @@ const DashboardPage = () => {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Network Command Center</h1>
@@ -99,7 +97,6 @@ const DashboardPage = () => {
           </div>
         </div>
 
-        {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <StatusCard 
             title="Network Health" 
@@ -133,7 +130,6 @@ const DashboardPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          {/* Main Map Area */}
           <div className="lg:col-span-2 space-y-8">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
@@ -143,9 +139,7 @@ const DashboardPage = () => {
               <div className="absolute inset-0 bg-slate-50 flex items-center justify-center overflow-hidden">
                 <div className="relative w-full h-full max-w-[800px] mx-auto">
                    
-                   {/* Interactive India Map Visualization */}
                    <svg className="w-full h-full" viewBox="0 0 800 700">
-                      {/* India Outline (Simplified) */}
                       <path 
                         d="M300,50 L400,20 L500,50 L600,150 L700,200 L650,400 L500,600 L350,680 L200,500 L100,300 L200,200 L300,50 Z" 
                         fill="#e2e8f0" 
@@ -154,20 +148,15 @@ const DashboardPage = () => {
                         className="drop-shadow-sm"
                       />
 
-                      {/* Rail Network Connections */}
                       <g stroke="#cbd5e1" strokeWidth="2" strokeDasharray="4,4">
-                        {/* North-South Corridor */}
                         <line x1="280" y1="150" x2="350" y2="500" />
-                        {/* East-West Corridor */}
                         <line x1="180" y1="350" x2="550" y2="280" />
-                        {/* Diagonals */}
                         <line x1="280" y1="150" x2="550" y2="280" />
                         <line x1="280" y1="150" x2="180" y2="350" />
                         <line x1="180" y1="350" x2="350" y2="500" />
                         <line x1="350" y1="500" x2="550" y2="280" />
                       </g>
 
-                      {/* Station Nodes */}
                       {stations.map((station) => (
                         <g 
                           key={station.id}
@@ -175,7 +164,6 @@ const DashboardPage = () => {
                           onMouseLeave={() => setHoveredStation(null)}
                           className="cursor-pointer"
                         >
-                          {/* Pulse Effect for Critical/Warning Status */}
                           {station.status !== 'optimal' && (
                             <circle 
                               cx={station.x} 
@@ -189,7 +177,6 @@ const DashboardPage = () => {
                             </circle>
                           )}
                           
-                          {/* Station Dot */}
                           <circle 
                             cx={station.x} 
                             cy={station.y} 
@@ -202,7 +189,6 @@ const DashboardPage = () => {
                             strokeWidth="2"
                           />
                           
-                          {/* Station Label */}
                           <text 
                             x={station.x + 15} 
                             y={station.y + 4} 
@@ -215,7 +201,6 @@ const DashboardPage = () => {
                       ))}
                    </svg>
 
-                   {/* Hover Tooltip */}
                    <AnimatePresence>
                      {hoveredStation && (
                        <motion.div
@@ -264,7 +249,6 @@ const DashboardPage = () => {
                      )}
                    </AnimatePresence>
 
-                   {/* Legend */}
                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur p-3 rounded-lg shadow-sm border border-gray-100 text-xs">
                     <div className="font-semibold text-gray-700 mb-2">Network Status</div>
                     <div className="flex items-center space-x-2 mb-1">
@@ -290,7 +274,6 @@ const DashboardPage = () => {
               </div>
             </motion.div>
 
-            {/* Live Trains Table */}
             <div className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
               <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center">
                 <h3 className="font-semibold text-gray-800">Priority Trains Monitoring</h3>
@@ -331,10 +314,8 @@ const DashboardPage = () => {
             </div>
           </div>
 
-          {/* Sidebar */}
           <div className="space-y-8">
             
-            {/* Zone Status */}
             <div className="bg-white rounded-xl shadow-md border border-gray-200 p-6">
               <h3 className="font-semibold text-gray-800 mb-4">Zone Status</h3>
               <div className="space-y-4">
@@ -358,7 +339,6 @@ const DashboardPage = () => {
               </div>
             </div>
 
-            {/* Recent Alerts */}
             <div className="bg-white rounded-xl shadow-md border border-gray-200 p-6">
               <h3 className="font-semibold text-gray-800 mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 text-orange-500 mr-2" />
@@ -377,7 +357,6 @@ const DashboardPage = () => {
               </button>
             </div>
 
-            {/* Weather Widget */}
             <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-md p-6 text-white">
               <div className="flex justify-between items-start">
                 <div>
