@@ -50,5 +50,5 @@ Follow these steps to set up the project locally:
 
 ## 👥 Team
 
-Built with ❤️ by the **RailOptima Team** for the Smart India Hackathon (SIH) 2025.
+Built with ❤️ by the **RailOptima Team**.
 
